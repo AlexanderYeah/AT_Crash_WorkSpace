@@ -1,8 +1,8 @@
 //
 //  AppDelegate.h
-//  AT_Crash_Demo1
+//  AT_Handle_Crash_Demo
 //
-//  Created by Coder on 2018/12/18.
+//  Created by TrimbleZhang on 2018/12/19.
 //  Copyright © 2018 AlexanderYeah. All rights reserved.
 //
 

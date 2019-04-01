@@ -1,18 +1,18 @@
 //
-//  AT_Crash_Demo1UITests.m
-//  AT_Crash_Demo1UITests
+//  AT_Handle_Crash_DemoUITests.m
+//  AT_Handle_Crash_DemoUITests
 //
-//  Created by Coder on 2018/12/18.
+//  Created by TrimbleZhang on 2018/12/19.
 //  Copyright © 2018 AlexanderYeah. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface AT_Crash_Demo1UITests : XCTestCase
+@interface AT_Handle_Crash_DemoUITests : XCTestCase
 
 @end
 
-@implementation AT_Crash_Demo1UITests
+@implementation AT_Handle_Crash_DemoUITests
 
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.

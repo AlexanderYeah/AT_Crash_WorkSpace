@@ -1,16 +1,12 @@
 //
 //  AppDelegate.m
-//  AT_Crash_Demo1
+//  AT_Handle_Crash_Demo
 //
-//  Created by Coder on 2018/12/18.
+//  Created by TrimbleZhang on 2018/12/19.
 //  Copyright © 2018 AlexanderYeah. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#include <execinfo.h>
-#import "SignalHandler.h"
-#import "UncaughtExceptionHandler.h"
-
 
 @interface AppDelegate ()
 
@@ -21,48 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    
-    // 捕获crash 信息
-    InstallUncaughtExceptionHandler();
-    
     return YES;
 }
-
-// 1 backtrace可以在程序运行的任何地方被调用，返回各个调用函数的返回地址，可以限制最大调用栈返回层数。
-
-// 2 在backtrace拿到函数返回地址之后，backtrace_symbols可以将其转换为编译符号，这些符号是编译期间就确定的
-// 3 根据backtrace_symbols返回的编译符号，abi::__cxa_demangle可以找到具体地函数方法
-//
-void SignalExceptionHandler(int signal)
-{
-    NSMutableString *mstr = [[NSMutableString alloc] init];
-    [mstr appendString:@"Stack:\n"];
-    void* callstack[128];
-    // 导入#include <execinfo.h> 调用 backtrace backtrace_symbols 和方法
-    int i, frames = backtrace(callstack, 128);
-    char** strs = backtrace_symbols(callstack, frames);
-    for (i = 0; i <frames; ++i) {
-        [mstr appendFormat:@"%s\n", strs[i]];
-    }
-//    [SignalHandler saveCreash:mstr];
-    
-}
-//
-//
-//void InstallSignalHandler(void)
-//{
-//
-//    signal(SIGHUP, SignalExceptionHandler);
-//    signal(SIGINT, SignalExceptionHandler);
-//    signal(SIGQUIT, SignalExceptionHandler);
-//    signal(SIGABRT, SignalExceptionHandler);
-//    signal(SIGILL, SignalExceptionHandler);
-//    signal(SIGSEGV, SignalExceptionHandler);
-//    signal(SIGFPE, SignalExceptionHandler);
-//    signal(SIGBUS, SignalExceptionHandler);
-//    signal(SIGPIPE, SignalExceptionHandler);
-//}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
