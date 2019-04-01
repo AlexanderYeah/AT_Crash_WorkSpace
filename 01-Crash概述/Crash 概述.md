@@ -4,7 +4,7 @@
 
 一般是由Mach 异常 或者Objective-C 异常引起的crash
 
-![]()
+![](https://github.com/AlexanderYeah/AT_Crash_WorkSpace/blob/master/01-Crash%E6%A6%82%E8%BF%B0/img/crash01.png)
 
 * 1 Mach 异常是最底层的内核级异常。如EXC_BAD_ACCESS（内存访问异常)
 * 2 Unix Signal是Unix系统中的一种异步通知机制，Mach异常在host层被ux_exception转换为相应的Unix Signal，并通过threadsignal将信号投递到出错的线程
